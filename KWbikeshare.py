@@ -98,7 +98,7 @@ def time_stats(df):
 
 
 
-    # TO DO: display the most common month 
+    # TO DO: display the most common month of travel
 
     #convert Start_Time column to month
     df['month'] = df['Start Time'].dt.month
