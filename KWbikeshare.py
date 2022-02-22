@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
-import calendar 
+import calendar
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -24,8 +24,8 @@ def get_filters():
         if city.lower() in cities:
             break
         else:
-            print('Please enter a valid city name.')
- 
+            print('That does not look right. Please enter a valid city name.')
+
     # TO DO: get user input for month (all, january, february, ... , june)
     months=['january','february','march','april','may','june']
 
@@ -62,8 +62,8 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city])
-    
-     # referenced Practice Problem 3 for the following code...  
+
+     # referenced Practice Problem 3 for the following code...
      # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -84,7 +84,7 @@ def load_data(city, month, day):
     if day != 'all':
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
- 
+
 
 
     return df
@@ -95,33 +95,33 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
- 
 
-    # TO DO: display the most common month
-    
+
+
+    # TO DO: display the most common month of travel
+
     #convert Start_Time column to month
-    df['month'] = df['Start Time'].dt.month  
+    df['month'] = df['Start Time'].dt.month
     #find the most common month of travel
     common_month = df['month'].mode()[0]
     print('Travel is most frequent in the month of:', common_month)
 
-    
- 
+
+
 
 
     # TO DO: display the most common day of week. I have referenced Practice Problem 1 for the following code...
-    
+
     #convert Start_Time column to weekday_name
     df['weekday'] = df['Start Time'].dt.weekday_name
-    #find the most common day of travel 
+    #find the most common day of travel
     common_day_week = df['weekday'].mode()[0]
     print('The most frequent day of the week for travel is:', common_day_week)
 
- 
+
 
     # TO DO: display the most common start hour
-    
+
     # convert the Start_Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     # extract hour from the Start Time column to create an hour column
@@ -186,10 +186,10 @@ def user_stats(df):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-    
+
     user_types = df['User Type'].value_counts()
     print(user_types)
-    
+
     # TO DO: Display counts of gender
     if 'Gender' in df.columns:
         gender_counts=df['Gender'].value_counts()
@@ -199,7 +199,7 @@ def user_stats(df):
 
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    
+
     if 'Birth Year' in df.columns:
         oldest_user=df['Birth Year'].min()
         youngest_user=df['Birth Year'].max()
@@ -209,8 +209,8 @@ def user_stats(df):
         print('The most common user age is:', common_age)
     else:
         print('Birth year data not avaiable in this dataset.')
-        
-    
+
+
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -229,23 +229,23 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-        
+
 def raw_data(df):
-    #displays first 5 lines of data 
+    #displays first 5 lines of data
     i = 0
     while True:
         view_raw_data = input('\n Would you like to view raw data? Please input yes or no to view the first 5 lines of data.\n')
-        
+
         if view_raw_data.lower() != 'yes':
             break
-            
+
         else:
             i= i+ 5
             print(df.iloc[i:i+5])
 
-        
 
-       
+
+
 
 
 if __name__ == "__main__":
