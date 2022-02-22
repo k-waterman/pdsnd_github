@@ -20,3 +20,6 @@ chicago.csv
 https://www.geeksforgeeks.org/try-except-else-and-finally-in-python/
 file:///Users/kristenwaterman/Downloads/beginners_python_cheat_sheet_pcc_all.pdf
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+
+### Fun Fact
+I had to submit my project 9 times before it was accepted! 
