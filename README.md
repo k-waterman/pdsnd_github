@@ -2,6 +2,10 @@
 
 ### Date created
 31 January 2022
+
+### Date accepted
+01 February 2022
+
 ### Project Title
 Python Script for Bikeshare Data Investigation
 
@@ -16,3 +20,6 @@ chicago.csv
 https://www.geeksforgeeks.org/try-except-else-and-finally-in-python/
 file:///Users/kristenwaterman/Downloads/beginners_python_cheat_sheet_pcc_all.pdf
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+
+### Fun facts
+I submitted my project 9 times before it was accepted!
